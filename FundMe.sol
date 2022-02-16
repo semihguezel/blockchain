@@ -21,6 +21,7 @@ contract FundMe {
     }
 
     // Functions and addresses declared payable can receive ether into the contract.
+    // Function to fund Ether into this contract.
     function fund() public payable {
         uint256 minUSD = 50 * 10 ** 18;
         //require is a function that checks the statement inside of it 
@@ -51,7 +52,6 @@ contract FundMe {
         return uint256(answer * 10000000000);
     }
 
-    //100000000
     function getConvertionRate( uint256 ethAmount) public view returns (uint256){
         uint256 ethPrice = getPrice(); //In wei units
         uint256 ethAmounInUsd = (ethPrice * ethAmount) / 1000000000000000000;
