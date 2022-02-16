@@ -72,12 +72,12 @@ contract FundMe {
         //this keyword refers the contract that we are currently in
         //Who ever calls this function we are transferring all of our money that we have in this adress
         msg.sender.transfer(address(this).balance);
-        //We reset balance of the funded adresses to 0 after withdrawal 
+        //We reset stored data in addressToAmountFunded variable to 0 after withdrawal 
         for (uint256 funderIndex =0; funderIndex < funders.length; funderIndex++){
             address funder = funders[funderIndex];
             addressToAmountFunded[funder] = 0;
         }
-        //We reset the funders array to 0 after withdrawal
+        //We reset the size of the funders array to 0 after withdrawal
         funders = new address[](0);
     }
  
